@@ -1,6 +1,10 @@
 import media
 import fresh_tomatoes
 
+'''
+This class creates a list of Movie objects and uses fresh_tomatoes.py
+to auto-generate content
+'''
 
 avatar = media.Movie(
     "Avatar",

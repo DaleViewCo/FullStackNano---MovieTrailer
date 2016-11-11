@@ -1,6 +1,11 @@
 from urllib2 import urlopen
 import json
 import os
+'''
+Defines Movie object
+Given a title and youtube url for its trailer,
+downloads box art and summary using OMDB API
+'''
 
 
 class Movie:
@@ -17,6 +22,7 @@ class Movie:
         self.storyline = data['Plot']
         self.box_art = data['Poster']
         image_path = self.title+".jpg"
+        # Check if the image file has already been downloaded; if not, download
         if not(os.path.isfile(image_path)):
             box_art_response = urlopen(self.box_art)
             image_file = open(image_path, 'w')
